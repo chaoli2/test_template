@@ -1,2 +1,2 @@
 # test_template
-Test templates
+Provide sample code for many compile systems
