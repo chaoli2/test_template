@@ -18,8 +18,18 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(message_filters REQUIRED)
+
+#include_directories(${PROJECT_SOURCE_DIR}/include)
+
+add_executable(${PROJECT_NAME} src/main.cpp)
+ament_target_dependencies(${PROJECT_NAME}
+  "std_msgs"
+  "sensor_msgs"
+  "rclcpp"
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
