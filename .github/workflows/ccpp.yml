@@ -1,0 +1,19 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: cd
+      run: cd cmake_empty_project/build
+    - name: clean
+      run: rm -rf *
+    - name: cmake
+      run: cmake ..
+    - name: make
+      run: make
